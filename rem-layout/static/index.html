@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <title>主页</title>
+  </head>
+  <body>
+    <div class="search" id="topAnchor">
+      <div class="container">
+        <form action="#">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="输入搜索内容" />
+        </form>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="../img/images/swiper1.jpg" alt="/" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/images/swiper2.jpg" alt="/" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/images/swiper3.jpg" alt="/" />
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="container">
+        <div class="manual">
+          <div class="info">
+            <span class="title">精选手册</span>
+            <a href="manual.html" class="more">查看更多</a>
+          </div>
+          <ul class="content">
+            <li>
+              <div class="pic">
+                <img src="../img/images/fe.png" alt="#" />
+              </div>
+              <a class="intro" href="#">
+                <p class="intro-title">前端开发手册</p>
+                <span class="date">2019.12.23</span>
+                <button class="enter" type="submit">进入</button>
+              </a>
+            </li>
+            <li>
+              <div class="pic">
+                <img src="../img/images/java.png" alt="#" />
+              </div>
+              <a class="intro" href="#">
+                <p class="intro-title">JAVA开发手册</p>
+                <span class="date">2019.12.23</span>
+                <button class="enter" type="submit">进入</button>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="blog">
+          <div class="info">
+            <span class="title">精选博客</span>
+            <a href="blog.html" class="more">查看更多</a>
+          </div>
+          <ul class="content">
+            <li>
+              <div class="pic">
+                <img src="../img/images/people.jpg" alt="#" />
+              </div>
+              <a class="intro" href="#">
+                <p class="intro-title">编程学习的五大误区</p>
+                <span class="date">2019.12.23</span>
+                <button class="enter" type="submit">进入</button>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="video">
+          <div class="info">
+            <span class="title">精选视频</span>
+            <a href="video.html" class="more">查看更多</a>
+          </div>
+          <ul class="content">
+            <li>
+              <a class="pic" href="detail.html">
+                <img src="../img/images/sql.jpg" alt="#" />
+              </a>
+              <a class="intro" href="detail.html">
+                <p class="intro-title">视频</p>
+                <span class="date">2019.12.23</span>
+                <button class="enter" type="submit">进入</button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="words">
+          <p class="line">晓舟报告</p>
+          <p>团队介绍</p>
+        </div>
+        <p>晓舟报告官方网站&copy; 冀ICP备18023262号-4</p>
+      </div>
+    </footer>
+
+    <div class="menu">
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="index.html">
+              <img src="../mobile-img/layer1.2.png" alt="" />
+              <span>首页</span>
+            </a>
+          </li>
+          <li>
+            <a href="manual.html">
+              <img src="../mobile-img/layer2.png" alt="" />
+              <span>手册</span>
+            </a>
+          </li>
+          <li>
+            <a href="blog.html">
+              <img src="../mobile-img/layer3.png" alt="" />
+              <span>博客</span>
+            </a>
+          </li>
+          <li>
+            <a href="video.html">
+              <img src="../mobile-img/video.png" alt="" />
+              <span>视频</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <img src="../mobile-img/layer4.png" alt="" />
+              <span>我的</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="toTop">
+      <a href="#topAnchor"><img src="../img/images/返回顶部.png" alt="" /></a>
+    </div>
+    <script>
+      var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+  </body>
+</html>
