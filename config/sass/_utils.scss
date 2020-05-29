@@ -1,0 +1,53 @@
+@import 'config';
+
+%basic-btn {
+	padding: 15px 25px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	background-color: $primary-color;
+	border: none;
+	box-shadow: $box-shadow-base;
+	&:hover {
+		background-color: $link-hover-color;
+	}
+}
+
+@mixin btn-color($color) {
+	padding: 15px 25px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	background-color: $color;
+	border: none;
+	box-shadow: $box-shadow-base;
+	&:hover {
+		background-color: darken($color, 10%);
+	}
+}
+
+.btn {
+	@extend %basic-btn;
+	font-size: 14px;
+	border-radius: $border-radius-base;
+}
+
+.btn-md {
+	@extend %basic-btn;
+	font-size: 22px;
+	border-radius: $border-radius-base + 6px;
+}
+
+.btn-lg {
+	@extend %basic-btn;
+	font-size: 36px;
+	border-radius: $border-radius-base + 12px;
+}
+
+.btn-danger {
+	@include btn-color(#f5222d);
+	// font-size: 22px;
+	// border-radius: $border-radius-base + 6px;
+}

@@ -1,0 +1,25 @@
+@import 'config';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container {
+	background-color: #303952;
+	min-height: 100vh;
+	padding: 50px;
+}
+.content {
+	border-radius: $border-radius-base;
+	background-color: #fff;
+	width: 80vw;
+	height: 80vh;
+	margin: 0 auto;
+	padding: 50px;
+
+	&-button {
+		width: 100px;
+	}
+}
+@import 'utils';
