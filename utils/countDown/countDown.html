@@ -49,7 +49,7 @@
 		</div>
 		<p id="tips"></p>
 		<script>
-			function getResultTime(ms) {
+			const getResultTime = (ms) => {
 				var days = Math.floor(ms / (24 * 60 * 60 * 1000));
 				var ms1 = ms % (24 * 60 * 60 * 1000);
 				var hours = Math.floor(ms1 / (60 * 60 * 1000));
@@ -63,7 +63,7 @@
 					minutes: minutes,
 					seconds: seconds,
 				};
-			}
+			};
 			const addZero = (num) => (num < 10 && num > 0 ? `0${num}` : num);
 			const getDate = (time) => {
 				const reg = /^(\d\d\d\d)\-(1|2|3|4|5|6|7|8|9|10|11|12)\-(\d|\d\d)$/;
