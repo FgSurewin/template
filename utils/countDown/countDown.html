@@ -80,7 +80,7 @@
 				)} m : ${addZero(seconds)} s`;
 			};
 			let trigger = null; // The variable of setInterval function
-			date.onblur = function () {
+			date.onblur = () => {
 				const target = getDate(this.value);
 				if (target === -1) {
 					tips.innerHTML = 'Invalid Date Format';
