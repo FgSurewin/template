@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				display: flex;
+				flex-direction: column;
+				height: 100vh;
+				justify-content: center;
+				align-items: center;
+				background-color: rgb(56, 7, 7);
+				color: #fff;
+				font-size: 50px;
+				font-weight: bolder;
+			}
+			.input {
+				color: #fff;
+				font-size: 34px;
+				font-weight: bolder;
+				display: flex;
+				flex-direction: column;
+			}
+			.input #date {
+				outline: none;
+				border: none;
+				font-size: 34px;
+				padding: 10px;
+				border-radius: 20px;
+				margin-top: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>COUNT DOWN</h3>
+		<br />
+		<p id="output">Days:Hours:Minutes:Second</p>
+		<br />
+		<div class="input">
+			<label for="date">SET THE TARGET DATE(YYYY-MM-DD): </label>
+			<input type="text" id="date" placeholder="2020-8-5" />
+		</div>
+		<p id="tips"></p>
+		<script>
+			function getResultTime(ms) {
+				var days = Math.floor(ms / (24 * 60 * 60 * 1000));
+				var ms1 = ms % (24 * 60 * 60 * 1000);
+				var hours = Math.floor(ms1 / (60 * 60 * 1000));
+				var ms2 = ms % (60 * 60 * 1000);
+				var minutes = Math.floor(ms2 / (60 * 1000));
+				var ms3 = ms % (60 * 1000);
+				var seconds = Math.floor(ms3 / 1000);
+				return {
+					days: days,
+					hours: hours,
+					minutes: minutes,
+					seconds: seconds,
+				};
+			}
+			const addZero = (num) => (num < 10 && num > 0 ? `0${num}` : num);
+			const getDate = (time) => {
+				const reg = /^(\d\d\d\d)\-(1|2|3|4|5|6|7|8|9|10|11|12)\-(\d|\d\d)$/;
+				if (time === '' || !reg.test(time)) return -1;
+				return new Date(time).getTime();
+			};
+			const calculate = (target) => {
+				const currentDate = new Date();
+				const time = target - currentDate;
+				const showTime = getResultTime(time);
+				const { days, hours, minutes, seconds } = showTime;
+				return `${addZero(days)} d : ${addZero(hours)} h : ${addZero(
+					minutes
+				)} m : ${addZero(seconds)} s`;
+			};
+			let trigger = null; // The variable of setInterval function
+			date.onblur = function () {
+				const target = getDate(this.value);
+				if (target === -1) {
+					tips.innerHTML = 'Invalid Date Format';
+					return;
+				} else {
+					tips.innerHTML = '';
+					clearInterval(trigger);
+					trigger = setInterval(() => {
+						const result = calculate(target);
+						output.innerHTML = result;
+					}, 1000);
+				}
+			};
+		</script>
+	</body>
+</html>
