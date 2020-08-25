@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			h1 {
+				text-align: center;
+			}
+			.box1 {
+				width: 100px;
+				height: 100px;
+				background-color: brown;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.box2 {
+				width: 100px;
+				height: 100px;
+				background-color: blueviolet;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			.container {
+				height: 100vh;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Hello</h1>
+			<div class="box1"></div>
+			<div class="box2"></div>
+		</div>
+		<div class="container"></div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+		<script>
+			gsap.to(".box1", {
+				scrollTrigger: {
+					trigger: ".container",
+					start: "100px top",
+					scrub: true,
+					markers: true,
+					pin: true,
+				},
+				x: 400,
+			});
+			gsap.to(".box2", {
+				scrollTrigger: {
+					trigger: ".container",
+					start: "100px top",
+					scrub: true,
+					markers: true,
+					pin: true,
+				},
+			});
+		</script>
+	</body>
+</html>
